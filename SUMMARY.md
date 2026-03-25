@@ -4,9 +4,7 @@
 
 ## SDK
 
-* [SDK](01-sdk/README.md)
-* [Installation](01-sdk/installation.md)
-* [Setup](01-sdk/setup.md)
+* [Installation](01-sdk/README.md)
 * [Create First Ownable](01-sdk/create-first-ownable.md)
 * [Manage Ownables](01-sdk/manage-ownables.md)
 * [Transfer and Consume](01-sdk/transfer-and-consume.md)

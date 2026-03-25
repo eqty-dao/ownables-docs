@@ -1,24 +1,14 @@
 # Manage Ownables
 
-Managing an Ownable means working with its event chain, not only reading a balance.
+After instantiation, the wallet shows Ownable details and widget-driven actions.
 
-## Daily actions
+Core operations:
 
-- Load event chain state.
-- Query current state from runtime.
-- Execute domain actions.
-- Persist updated chain.
+- Read current Ownable info and metadata.
+- Execute actions exposed by the Ownable.
+- Refresh and apply new events.
+- Review lock and consumed status when supported.
 
-```ts
-const rpc = ownables.rpc(chain.id);
-const state = await rpc.query({ get_state: {} });
-await rpc.exec({ action: "update_profile", data: { level: 2 } });
-```
+The widget is state-driven. It renders from Ownable state and sends actions to the wallet, while the wallet executes those actions and updates chain state.
 
-## Ownership checks
-
-In hybrid mode, check ownership against external Base events before allowing privileged actions.
-
-## State integrity
-
-Always persist after successful execution and verify the latest chain head before presenting UI-confirmed state.
+For day-to-day usage, treat the Ownable view as your control panel and the event chain as your source of truth.

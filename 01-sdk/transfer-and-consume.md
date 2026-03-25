@@ -1,18 +1,19 @@
 # Transfer and Consume
 
-Ownables support lifecycle actions that may include transfer and consumption.
+These actions depend on package capabilities. Not every Ownable supports every action.
 
 ## Transfer
 
-A transfer changes authority to another owner. In hybrid mode, transfer authority must align with NFT ownership state.
+If transferable, use the actions menu and select `Transfer`.
+
+The SDK validates recipient address format and blocks transfer to your own address.
+
+## Lock
+
+If lockable and not currently locked, use `Lock` from the actions menu.
+
+Locking is used in flows where ownership and control must stay aligned during transitions.
 
 ## Consume
 
-Consumption means the asset can no longer be used in the same way. This is modeled as an event-driven state transition, not only a movement between addresses.
-
-## Practical checklist
-
-- Validate caller authority.
-- Validate external ownership context when required.
-- Emit lifecycle event.
-- Persist and sync resulting chain state.
+If consumable, consume actions are exposed by the Ownable itself. Consuming changes lifecycle state and can affect future allowed actions.

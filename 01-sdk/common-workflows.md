@@ -1,22 +1,21 @@
 # Common Workflows
 
-## Receive and accept an Ownable
+## Local development loop
 
-1. Receive availability notification.
-2. Validate payload and source.
-3. Trigger accept flow.
-4. Pull chain and package assets.
-5. Confirm state and ownership in wallet UI.
+1. Build package zips with `yarn ownables:build`.
+2. Upload package zip in the wallet.
+3. Instantiate and test widget actions.
+4. Rebuild and repeat.
 
-## Update Ownable state
+## Receive packages from relay inbox
 
-1. Load latest chain state.
-2. Run `exec` action.
-3. Persist updated chain.
-4. Reconcile with external events if hybrid mode is enabled.
+1. Connect wallet.
+2. Open issue/import panel.
+3. Import packages from relay inbox when available.
+4. Review and instantiate downloaded package.
 
-## Recover on a new device
+## Exchange between users
 
-1. Restore account keys.
-2. Rehydrate chain snapshots and package cache.
-3. Re-run verification before showing writable state.
+1. Sender transfers Ownable to recipient address.
+2. Recipient imports and opens package.
+3. Both sides verify expected state and ownership after events are applied.

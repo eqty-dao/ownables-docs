@@ -1,22 +1,17 @@
 # In-Browser Builder
 
-The browser builder is the primary path for preparing and deploying Ownables in modern integrations.
+The SDK wallet includes a Builder flow for creating package uploads from a simple form.
 
-## Why this flow
+What it does:
 
-- No upload-first dependency.
-- Reproducible package preparation in client context.
-- Direct deploy orchestration through configured adapter.
+- Collects Ownable metadata and media.
+- Produces upload payload and package metadata.
+- Submits to configured builder endpoint.
 
-## Builder API surface
+What you need:
 
-- `prepareOwnable(input)`
-- `buildInstantiateMsg(input, packageCid, networkId, nft?)`
-- `estimateCost(...)`
-- `deploy(adapter, params)`
+- `VITE_BUILDER` configured.
+- Connected wallet.
+- Correct Base network selected.
 
-## Good practices
-
-- Show package CID to users before final deploy.
-- Keep metadata explicit and deterministic.
-- Version package templates in source control.
+If the builder flow is unavailable, use zip import from local packages as fallback.

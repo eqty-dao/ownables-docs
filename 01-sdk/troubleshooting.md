@@ -1,19 +1,21 @@
 # Troubleshooting
 
-## Chain verifies locally but fails in wallet
+## Builder button disabled
 
-Likely cause: missing or extra external events.
+`VITE_BUILDER` is not configured or builder service is unavailable.
 
-Action: re-run reconciliation against Base logs and inspect ordering key `(blockNumber, transactionIndex, logIndex)`.
+## Wrong network warning
 
-## Deploy succeeds but runtime query fails
+Switch wallet network to the expected Base chain before creating or executing Ownable actions.
 
-Likely cause: package asset mismatch or wrong expected code hash.
+## Package import fails
 
-Action: verify CID, asset loader, and wasm/code hash binding.
+Check that the zip includes required files. For dynamic Ownables this includes contract wasm and schema/query definitions.
 
-## Permission denied on exec
+## Widget shows nothing
 
-Likely cause: ownership authority mismatch.
+Verify the package contains widget assets and that the Ownable supports the required widget-state query.
 
-Action: confirm lock status and effective owner from the configured ownership model.
+## Relay inbox import fails
+
+Check `VITE_RELAY`, wallet connection, and session authentication state.

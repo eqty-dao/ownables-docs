@@ -7,8 +7,6 @@ const sidebars = {
       label: 'SDK',
       items: [
         '01-sdk/README',
-        '01-sdk/installation',
-        '01-sdk/setup',
         '01-sdk/create-first-ownable',
         '01-sdk/manage-ownables',
         '01-sdk/transfer-and-consume',

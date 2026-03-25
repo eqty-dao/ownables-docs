@@ -1,38 +1,25 @@
 # Create First Ownable
 
-## Goal
+There are two practical ways to create your first Ownable in `ownables-sdk`.
 
-Create and initialize one Ownable from local files with the browser builder.
+## Path A: Import a local package zip
 
-## Steps
+1. Build examples if needed:
 
-1. Prepare files and metadata.
-2. Build package and get CID.
-3. Build instantiate message.
-4. Deploy through adapter.
-
-```ts
-import { prepareOwnable, buildInstantiateMsg, deploy } from "@ownables/builder";
-
-const prepared = await prepareOwnable({
-  name: "Demo Ownable",
-  description: "First Ownable",
-  files,
-  packageService,
-});
-
-const instantiateMsg = buildInstantiateMsg({
-  name: "Demo Ownable",
-  description: "First Ownable",
-  packageCid: prepared.packageCid,
-  networkId: "eip155:8453",
-});
-
-const result = await deploy(adapter, {
-  wasm,
-  instantiateMsg,
-  expectedCodeHash,
-});
+```bash
+cd ../ownables-sdk
+yarn ownables:build
 ```
 
-After deploy, store the Ownable id and package CID together.
+2. In the wallet UI, open the action panel and choose `Upload`.
+3. Select a zip from `ownables/*.zip`.
+4. Select the imported package from the package list to instantiate it.
+
+## Path B: Create via Builder
+
+1. In the action panel, choose `Ownable Builder`.
+2. Fill in name, description, and image.
+3. Confirm wallet prompts if payment or signing is requested by the selected network flow.
+4. Wait for the upload request to complete.
+
+Use Path A for local development and reproducible testing. Use Path B for guided package creation flows.

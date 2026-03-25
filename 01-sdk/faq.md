@@ -1,13 +1,21 @@
 # FAQ
 
-## Is an Ownable just an NFT?
+## Is this chapter for `ownables-js`?
 
-No. NFTs can represent ownership. Ownables represent ownership plus behavior and lifecycle through an event chain.
+No. This chapter is for `ownables-sdk` wallet and toolkit usage.
 
-## Do I need on-chain execution for every state change?
+## Do I need Rust to use the SDK wallet?
 
-Not always. Ownables can keep behavior in private event chains while anchoring ownership context to Base, depending on mode.
+No for basic usage. Yes if you want to build Ownable examples locally from source.
 
-## Can I change external subscription rules later?
+## Where do package zips come from?
 
-Not for the same Ownable instance. Subscription specs are defined at init and are immutable for deterministic replay.
+From `yarn ownables:build` in `../ownables-sdk`, or from builder and relay-based flows.
+
+## Does every Ownable support transfer, lock, and consume?
+
+No. Capabilities depend on the Ownable package and contract methods.
+
+## Does the widget call external internet APIs?
+
+The intended model is that widget rendering is based on Ownable state provided through widget-state query, running in a sandboxed frame.
