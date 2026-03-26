@@ -26,7 +26,7 @@ When an Ownable is instantiated, an event chain is added to the package to creat
 
 An Ownable is built around a WASM smart contract. The contract defines rules and execution logic.
 
-State changes happen by applying events. The contract can process [public events from EVM blockchains](https://docs.soliditylang.org/en/latest/contracts.html#events) and private events using the [EQTY event chain](06-protocol/event-chain/README.md).
+State changes happen by applying events. The contract can process [public events from EVM blockchains](https://docs.soliditylang.org/en/latest/contracts.html#events) and private events using the EQTY event chain.
 
 Information is read through queries. The Ownables protocol defines query patterns used by wallet and verifier components.
 
@@ -71,12 +71,12 @@ This functionality is available as a JavaScript library, allowing developers to 
 
 If your goal is to get working quickly:
 
-1. Go to [SDK](01-sdk/README.md) and complete setup.
+1. Go to the SDK setup and complete installation.
 2. Create your first Ownable and run the core workflows.
-3. Return to [Concepts](02-concepts/README.md) when you need better model clarity.
+3. Return to concepts documentation when you need better model clarity.
 
 If your goal is implementation depth:
 
-1. Read [Contract Development](03-contract-development/README.md).
-2. Continue with [Integration](05-integration/README.md).
-3. Use [Protocol](06-protocol/README.md) as the normative reference.
+1. Read contract development guides.
+2. Continue with integration guides.
+3. Use protocol specifications as the normative reference.

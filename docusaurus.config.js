@@ -33,12 +33,6 @@ const config = {
           numberPrefixParser: false,
           include: [
             'README.md',
-            '01-sdk/**/*.md',
-            '02-concepts/**/*.md',
-            '03-contract-development/**/*.md',
-            '04-hub/**/*.md',
-            '05-integration/**/*.md',
-            '06-protocol/**/*.md',
           ],
           exclude: [
             '**/node_modules/**',
