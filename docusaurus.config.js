@@ -1,4 +1,5 @@
 // @ts-check
+const { remarkGitBook, rehypeGitBook } = require('docusaurus-plugin-gitbook');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -12,6 +13,7 @@ const config = {
 
   onBrokenLinks: 'throw',
   markdown: {
+    format: 'md',
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
@@ -31,8 +33,10 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           numberPrefixParser: false,
+          beforeDefaultRemarkPlugins: [remarkGitBook],
+          rehypePlugins: [rehypeGitBook],
           include: [
-            'README.md',
+            '*.md',
           ],
           exclude: [
             '**/node_modules/**',
@@ -50,7 +54,7 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: 'Ownables Docs',
+      title: 'Ownables',
       items: [
         {
           type: 'docSidebar',
