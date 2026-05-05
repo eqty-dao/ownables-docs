@@ -235,13 +235,17 @@ match msg {
 
 The `execute` function should have minimum logic and always call internal helper functions.
 
-3. Add helpers functions.
+3. Import helper functions.
 
-Edit `ownables/my-first/src/contract.rs` again. Import the function `ensure_owner` from the `ownable_std`. With this function we ensure that the message is signed by the current owner.
+On top of the file, import the function `ensure_owner` from the `ownable_std`.
 
 ```rust
 use ownable_std::{package_title_from_name, ExternalEventMsg, InfoResponse, Metadata, OwnableInfo, ensure_owner};
 ```
+
+With this function we ensure that the message is signed by the current owner.
+
+4. Implement execute method.
 
 Calling `ensure_owner` is almost always be the first step of an execute method. Next we update the config with the new mood value (clamping to min/max).
 
