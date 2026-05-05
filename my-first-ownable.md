@@ -163,31 +163,33 @@ version = "0.1.3"
 
 In `ownables/my-first/assets/index.html`, stop mutating `moodIndex` directly in click handlers. Instead, send execute messages:
 
-```js
-let ownable_id;
-const moods = ["😭", "☹️", "😐", "🙂", "😄"];
+```html
+<script>
+  let ownable_id;
+  const moods = ["😭", "☹️", "😐", "🙂", "😄"];
 
-const emojiEl = document.getElementById("emoji");
-const cloudBtn = document.getElementById("cloud");
-const sunBtn = document.getElementById("sun");
+  const emojiEl = document.getElementById("emoji");
+  const cloudBtn = document.getElementById("cloud");
+  const sunBtn = document.getElementById("sun");
 
-const renderMood = (moodIndex) => {
-  emojiEl.textContent = moods[moodIndex] ?? '';
-};
+  const renderMood = (moodIndex) => {
+    emojiEl.textContent = moods[moodIndex] ?? '';
+  };
 
-cloudBtn.addEventListener("click", () => {
-  window.parent.postMessage({type: "execute", ownable_id, msg: { "decrement": {} }}, "*");
-});
+  cloudBtn.addEventListener("click", () => {
+    window.parent.postMessage({type: "execute", ownable_id, msg: { "decrement": {} }}, "*");
+  });
 
-sunBtn.addEventListener("click", () => {
-  window.parent.postMessage({type: "execute", ownable_id, msg: { "increment": {} }}, "*");
-});
+  sunBtn.addEventListener("click", () => {
+    window.parent.postMessage({type: "execute", ownable_id, msg: { "increment": {} }}, "*");
+  });
 
-window.addEventListener("message", (event) => {
-  ownable_id = event.data.ownable_id;
-  const moodIndex = event.data?.state?.mood ?? 2;
-  renderMood(moodIndex);
-});
+  window.addEventListener("message", (event) => {
+    ownable_id = event.data.ownable_id;
+    const moodIndex = event.data?.state?.mood ?? 2;
+    renderMood(moodIndex);
+  });
+</script>
 ```
 
 ### 4.3 Add mood to contract state
