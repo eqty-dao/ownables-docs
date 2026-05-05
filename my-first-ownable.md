@@ -68,7 +68,7 @@ Rebuild after this change:
 yarn ownables:build my-first
 ```
 
-In the SDK wallet import `my-first.zip` again. After the import, the version number should be `v0.1.1`. 
+In the SDK wallet import `my-first.zip` again. After the import, the version number should be `v0.1.1`. Issue a new "My First" Ownable.
 
 ## 3. Interactive widget
 
@@ -138,7 +138,7 @@ Rebuild after this change:
 yarn ownables:build my-first
 ```
 
-In the SDK wallet import `my-first.zip` again. After the import, the version number should be `v0.1.2`. 
+In the SDK wallet import `my-first.zip` again. After the import, the version number should be `v0.1.2`. Issue a new "My First" Ownable.
 
 ## 4. Persist happiness with events and widget state
 
@@ -272,4 +272,4 @@ fn try_update_mood(info: MessageInfo, deps: DepsMut, delta: i8) -> Result<Respon
 yarn ownables:build my-first
 ```
 
-Import `ownables/my-first.zip` again. You should now see mood survive refreshes because state is event-driven and queried from the contract, not kept only in widget memory.
+Import `ownables/my-first.zip` again and issue a new "My First" Ownable. You should now see mood survive refreshes because state is event-driven and queried from the contract, not kept only in widget memory.
