@@ -31,7 +31,7 @@ Then open the Ownables SDK wallet and issue it:
 
 ## 2. Customize the widget
 
-Edit `ownables/my-first/Cargo.toml` again and bump:
+Edit `ownables/my-first/Cargo.toml` to set the description and bump the version:
 
 ```toml
 description = "Happiness cannot be traveled to, owned, earned, worn or consumed. Happiness is the experience of living every minute with love, grace, and gratitude."
