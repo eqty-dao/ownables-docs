@@ -241,7 +241,13 @@ The `execute` function should have minimum logic and always call internal helper
 
 3. Add helpers functions.
 
-First we ensure that the message is signed by the current owner. This should almost always be the first step. Next we update the config with the new mood value (clamping to min/max).
+Edit `ownables/my-first/src/contract.rs` again. Import the function `ensure_owner` from the `ownable_std`. With this function we ensure that the message is signed by the current owner.
+
+```rust
+use ownable_std::{package_title_from_name, ExternalEventMsg, InfoResponse, Metadata, OwnableInfo, ensure_owner};
+```
+
+Calling `ensure_owner` is almost always be the first step of an execute method. Next we update the config with the new mood value (clamping to min/max).
 
 ```rust
 fn try_update_mood(info: MessageInfo, deps: DepsMut, delta: i8) -> Result<Response, ContractError> {
