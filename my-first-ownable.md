@@ -6,11 +6,7 @@ This guide walks through creating your first custom Ownable package based on `ow
 
 - The [SDK](sdk.md) is already set up in `ownables-sdk`
 - Dependencies are installed with `yarn install`
-- Rust toolchain setup is completed with:
-
-```bash
-yarn rustup
-```
+- Rust toolchain setup is completed with `yarn rustup`
 
 ## 1. Copy, Build, and Issue the package
 
@@ -53,14 +49,14 @@ Then replace `ownables/my-first/assets/index.html` with:
     body { width: 100%; height: 100%; overflow: hidden; }
     div { text-align: center; line-height: 100vh; font-size: 30vh; }
     
-    div:hover .on { display: none; }
-    div:not(:hover) .off { display: none; }
+    div:hover .off { display: none; }
+    div:not(:hover) .on { display: none; }
   </style>
 </head>
 <body>
   <div>
-    <span class="on">🙂</span>
-    <span class="off">😀</span>
+    <span class="off">🙂</span>
+    <span class="on">😀</span>
   </div>
 </body>
 </html>
