@@ -4,7 +4,7 @@
 
 Ownables are programmable digital assets that represent not just ownership, but also behavior and lifecycle. Instead of static tokens, they are entities with their own event chain where actions like creation, transfer, and consumption are recorded.
 
-Key differences from classic NFTs/ERC20:
+Key characteristics:
 
 - Ownables live in your wallet on your device, not on-chain or in the cloud.
 - Ownership, state, and history are all first-class.
@@ -54,7 +54,7 @@ You can upload Ownable packages to the hub. Packages can only be downloaded by t
 
 This makes the Hub useful for:
 
-- unlockable content tied to NFTs
+- private content available only to the current owner
 - exchanging Ownables between users
 
 The hub distributes package access. The Ownable state and lifecycle still come from the contract and event chain.
