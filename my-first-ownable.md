@@ -239,10 +239,13 @@ The `execute` function should have minimum logic and always call internal helper
 
 3. Import helper functions.
 
-On top of the file, import the function `ensure_owner` from the `ownable_std`.
+On top of the file, add `ensure_owner` to the existing `use ownable_std::{...}` import. Keep the other imports in that list. After the change, the import looks like this:
 
 ```rust
-use ownable_std::{package_title_from_name, ExternalEventMsg, InfoResponse, Metadata, OwnableInfo, ensure_owner};
+use ownable_std::{
+    EncodePublicEventRequest, InfoResponse, Metadata, OwnableEvent, OwnableInfo, PublicEvent,
+    ensure_owner, package_title_from_name,
+};
 ```
 
 With this function we ensure that the message is signed by the current owner.
